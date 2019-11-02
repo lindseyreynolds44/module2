@@ -60,22 +60,23 @@ public class Assig2
       boolean validInput = false;
 
       // Initialize an int, in order to start the while loop
-      int userInput = 0;
+      int userInput;
 
-      // While the user enters invalid input, continue prompting them
-      while(!validInput)
+      // Continue prompting the user until they enter a valid bet
+      do
       {
          System.out.println(
             "How much would you like to bet (1 - 100) or 0 to quit?");
          // Read in the user's input from the keyboard
          userInput = keyboard.nextInt();
 
-         // Check if the user's input was valid and update the boolean
+         // Check if the user's input is valid and update the boolean (0-100)
          if(userInput >= 0 && userInput <= 100)
          {
             validInput = true;
          } 
       }
+      while(!validInput);
 
       return userInput;
    }
