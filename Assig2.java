@@ -71,10 +71,9 @@ public class Assig2
          userInput = keyboard.nextInt();
 
          // Check if the user's input is valid and update the boolean (0-100)
-         if(userInput >= 0 && userInput <= 100)
-         {
+         if(userInput >= 0 && userInput <= 100) 
             validInput = true;
-         } 
+
       }
       while(!validInput);
 
@@ -113,38 +112,30 @@ public class Assig2
    private static String randString() 
    {
       // This String will be given a value depending on the random number 
-      // created below
       String randomString = ""; 
 
-      // Create a random double between 0.0 and 1.0
-      double decimal = Math.random();
+      double decimal = Math.random(); // Random double between 0.0 and 1.0
 
-      // Turn the random double into an int between 0 and 1000
+      // Turn the double into an int between 0 and 1000
       int wholeNum = (int) (decimal * 1000);
 
       // 50% of the time, create a "(space)" string
       if(wholeNum <= 500)
-      {
          randomString = "(space)";
-      } 
+      
       // 25% of the time, create a "cherries" string
       else if(wholeNum > 500 && wholeNum <= 750)
-      {
          randomString = "cherries";
-      }
+      
       // 12.5% of the time, create a "BAR" string
       else if(wholeNum > 750 && wholeNum <= 875)
-      {
          randomString = "BAR";
-      }
+      
       // 12.5% of the time, create a "7" string
       else if(wholeNum > 875 && wholeNum <= 1000)
-      {
          randomString = "7";
-      }
 
       return randomString;
-
    }
 
    /**
