@@ -1,6 +1,8 @@
 import java.util.Scanner;
 import java.lang.Math;
 
+//Dan was here
+
 /**
  * Class to play a casino game that takes user input for the bet amounts and
  * then randomly generates pulls, like a slot machine. When the user is done
