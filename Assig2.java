@@ -71,9 +71,14 @@ public class Assig2
          userInput = keyboard.nextInt();
 
          // Check if the user's input is valid and update the boolean (0-100)
+<<<<<<< HEAD
          if(userInput >= 0 && userInput <= 100) 
             validInput = true;
 
+=======
+         if(userInput >= 0 && userInput <= 100)
+            validInput = true;
+>>>>>>> d6f271c1b5bc3dd5fbf6c77aeb5596ea1de3b4fb
       }
       while(!validInput);
 
@@ -154,38 +159,31 @@ public class Assig2
       // Check to see if the user won, with 5 possible outcomes
       // cherries  [not cherries]  [any] pays 5 × bet
       if(string1.equals("cherries") && !string2.equals("cherries"))
-      {
          return 5;
-      }
+      
       // cherries  cherries  [not cherries] pays 15 × bet
       else if(string1.equals("cherries") && string2.equals("cherries") &&
          !string3.equals("cherries"))
-      {
          return 15;
-      } 
+      
       // cherries  cherries  cherries pays 30 × bet
       else if(string1.equals("cherries") && string2.equals("cherries") &&
          string3.equals("cherries"))
-      {
          return 30;
-      } 
+      
       // BAR  BAR  BARpays 50 × bet
       else if (string1.equals("BAR") && string2.equals("BAR") &&
          string3.equals("BAR"))
-      {
          return 50;
-      }
+      
       // 7  7  7 pays 100 × bet
       else if(string1.equals("7") && string2.equals("7") &&
          string3.equals("7"))
-      {
          return 100;
-      } 
+      
       // If none of the previous wins are true, return 0
       else 
-      {
          return 0;
-      }
    }
 
    /**
@@ -202,13 +200,9 @@ public class Assig2
 
       // Display the user's winnings or let them know they lost
       if (winnings == 0)
-      {
          System.out.println("Sorry, you lost.");
-      }
       else 
-      {
          System.out.println("Congratulations! You win: $" + winnings);
-      }
    }
 }
 
@@ -248,9 +242,8 @@ class ThreeString
    {
       // Check that the string is not null and less than or equal to MAX_LEN
       if(str != null && str.length() <= MAX_LEN)
-      {
          return true;
-      }
+      
       return false;
    }
 
@@ -346,9 +339,7 @@ class ThreeString
    {  
       // If numPulls exceeds 40, return false in order to end the game
       if(numPulls == 40) 
-      {
          return false;
-      }
 
       // Add the winnings to the pullWinnings array
       pullWinnings[numPulls] = winnings;
