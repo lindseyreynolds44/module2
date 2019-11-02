@@ -353,7 +353,7 @@ class ThreeString
     */
    public boolean saveWinnings(int winnings) 
    {  
-      // Check that numPulls does not exceed 40
+      // If numPulls exceeds 40, return false in order to end the game
       if(numPulls == 40) 
       {
          return false;
@@ -385,8 +385,7 @@ class ThreeString
       }
 
       // Add the users total winnings to the final string
-      outputWinnings = outputWinnings + "\nYour total winnings were: $"
-         + totalWinnings;
+      outputWinnings += "\nYour total winnings were: $" + totalWinnings;
 
       return outputWinnings;
    }
