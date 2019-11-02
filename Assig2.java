@@ -46,7 +46,6 @@ public class Assig2
       // End the game by printing out results and closing the Scanner object
       System.out.println(pullString.displayWinnings());
       keyboard.close();
-
    }
 
 
