@@ -16,13 +16,17 @@ public class Assig2
    public static void main(String[] args)
    {
       // Initiate bet and ThreeString variables to be used in the loop
-      int bet = 1;
+      int bet;
       int totalBets = 0;
       ThreeString pullString = new ThreeString();
       
+
       // While the user inputs valid bets, continue the game 
-      // Stop when user enters 0
-       while(bet != 0) {
+      // Stop when the user enters 0
+      
+
+      do 
+      {
          bet = getBet();
          totalBets += bet;
          
@@ -48,7 +52,9 @@ public class Assig2
                ", so you left with: $" + finalAmount);
             keyboard.close();
          }
-       }
+      } 
+      while(bet != 0);
+      
    }
 
    
