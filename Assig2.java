@@ -11,24 +11,19 @@ import java.lang.Math;
  */
 public class Assig2
 {
+   // 
    private static Scanner keyboard = new Scanner(System.in);
 
    public static void main(String[] args)
    {
       // Initiate bet and ThreeString variables to be used in the loop
       int bet;
-      int totalBets = 0;
       ThreeString pullString = new ThreeString();
       
-
       // While the user inputs valid bets, continue the game 
-      // Stop when the user enters 0
-      
-
       do 
       {
          bet = getBet();
-         totalBets += bet;
          
          // If the user 
          if(bet != 0)
@@ -46,10 +41,6 @@ public class Assig2
          else 
          {
             System.out.println(pullString.displayWinnings());
-            int finalAmount = pullString.getTotalWinnings() - totalBets;
-            System.out.println(
-               "You bet: $" + totalBets + 
-               ", so you left with: $" + finalAmount);
             keyboard.close();
          }
       } 
