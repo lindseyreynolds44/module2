@@ -23,7 +23,7 @@ public class Assig2
       do 
       {
          bet = getBet();
-         
+
          // Exit the loop if the user quits by entering 0
          if(bet == 0) break;
 
@@ -42,6 +42,8 @@ public class Assig2
       while(playAgain);
 
       // Print out the user's results and end the program
+      System.out.println("\nThank you for playing at the Casino!");
+      System.out.println("Here are your individual winnings:");    
       System.out.println(pullString.displayWinnings());
       keyboard.close();
       System.exit(0);
@@ -116,19 +118,19 @@ public class Assig2
       int wholeNum = (int) (decimal * 1000);
 
       // 50% of the time, create a "(space)" string
-      if(wholeNum <= 500)
+      if(wholeNum < 500)
          randomString = "(space)";
-      
+
       // 25% of the time, create a "cherries" string
-      else if(wholeNum > 500 && wholeNum <= 750)
+      else if(wholeNum >= 500 && wholeNum < 750)
          randomString = "cherries";
-      
+
       // 12.5% of the time, create a "BAR" string
-      else if(wholeNum > 750 && wholeNum <= 875)
+      else if(wholeNum >= 750 && wholeNum < 875)
          randomString = "BAR";
-      
+
       // 12.5% of the time, create a "7" string
-      else if(wholeNum > 875 && wholeNum <= 1000)
+      else if(wholeNum >= 875 && wholeNum < 1000)
          randomString = "7";
 
       return randomString;
@@ -148,36 +150,36 @@ public class Assig2
       String string3 = thePull.getString3();
 
       // Check to see if the user won, with 5 possible outcomes
-      
+
       // cherries  [not cherries]  [any] 
       if(string1.equals("cherries") && 
          !string2.equals("cherries"))
          return 5;
-      
+
       // cherries  cherries  [not cherries] 
       else if(string1.equals("cherries") && 
          string2.equals("cherries") &&
          !string3.equals("cherries"))
          return 15;
-      
+
       // cherries  cherries  cherries 
       else if(string1.equals("cherries") && 
          string2.equals("cherries") &&
          string3.equals("cherries"))
          return 30;
-      
+
       // BAR  BAR  BAR
       else if (string1.equals("BAR") && 
          string2.equals("BAR") &&
          string3.equals("BAR"))
          return 50;
-      
+
       // 7  7  7 
       else if(string1.equals("7") && 
          string2.equals("7") &&
          string3.equals("7"))
          return 100;
-      
+
       // If the user did not win, return 0
       else 
          return 0;
@@ -212,8 +214,8 @@ public class Assig2
 class ThreeString
 {
    // Declare static variables
-   private static final int MAX_LEN = 20;
-   private static final int MAX_PULLS = 40;
+   public static final int MAX_LEN = 20;
+   public static final int MAX_PULLS = 40;
    private static int[] pullWinnings = new int[MAX_PULLS];
    private static int numPulls = 0;
 
@@ -241,7 +243,7 @@ class ThreeString
       // Check that the string is not null and less than or equal to MAX_LEN
       if(str != null && str.length() <= MAX_LEN)
          return true;
-      
+
       return false;
    }
 
@@ -353,7 +355,7 @@ class ThreeString
    {
       // Create the string object to be returned
       String outputWinnings = "";
-      
+
       // Initialize a variable to keep track of all the user's winnings
       int totalWinnings = 0; 
 
@@ -572,7 +574,10 @@ Sorry, you lost.
 
 How much would you like to bet (1 - 100) or 0 to quit?
 0
+
+Thank you for playing at the Casino!
+Here are your individual winnings:
 0 0 0 0 115 0 0 0 0 0 0 365 0 540 0 125 0 0 780 0 20 215 0 0 0 25 5 0 120 325 0 0 
 Your total winnings were: $2635
 
-******************************************************************************/
+ ******************************************************************************/
