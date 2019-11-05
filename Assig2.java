@@ -42,8 +42,7 @@ public class Assig2
       while(playAgain);
 
       // Print out the user's results and end the program
-      System.out.println("\nThank you for playing at the Casino!");
-      System.out.println("Here are your individual winnings:");    
+      System.out.println("\nThank you for playing at the Casino!");  
       System.out.println(pullString.displayWinnings());
       keyboard.close();
       System.exit(0);
@@ -94,9 +93,14 @@ public class Assig2
       String randString3 = randString();
 
       // Set the ThreeString object's string variables with the random strings
-      currentPull.setString1(randString1);
-      currentPull.setString2(randString2);
-      currentPull.setString3(randString3);
+      if(!currentPull.setString1(randString1))
+         currentPull.setString1("(space)");
+      
+      if(!currentPull.setString2(randString2))
+         currentPull.setString2("cherries");
+      
+      if(!currentPull.setString3(randString3))
+         currentPull.setString3("BAR");
 
       return currentPull;
    }
@@ -354,7 +358,7 @@ class ThreeString
    public String displayWinnings()
    {
       // Create the string object to be returned
-      String outputWinnings = "";
+      String outputWinnings = "Here are your individual winnings:\n"; 
 
       // Initialize a variable to keep track of all the user's winnings
       int totalWinnings = 0; 
@@ -368,7 +372,7 @@ class ThreeString
       }
 
       // Add the users total winnings to the final string
-      outputWinnings += "\nYour total winnings were: $" + totalWinnings;
+      outputWinnings += "\nYour total winnings are: $" + totalWinnings;
 
       return outputWinnings;
    }
